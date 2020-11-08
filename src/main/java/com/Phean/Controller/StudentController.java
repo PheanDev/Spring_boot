@@ -16,7 +16,7 @@ import com.Phean.Services.studentService;
 
 @RestController
 public class StudentController {
-	studentService st=new studentDao();
+	studentService st=new studentService();
 	@ResponseStatus(value=HttpStatus.OK)
 	@RequestMapping(value="api/v1/",method=RequestMethod.GET)
 	public List<Student> getStudent() {
