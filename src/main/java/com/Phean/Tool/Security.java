@@ -19,6 +19,7 @@ public class Security {
     private String Key = "Thisissecurityko";
     private String salt = "This salt for use";
 
+    //AES Encryption
     public String Encrypt(String value) throws Exception {
         IvParameterSpec iv = new IvParameterSpec(IV.getBytes("UTF-8"));
         SecretKeySpec keyspec = new SecretKeySpec(Key.getBytes("UTF-8"), "AES");
@@ -72,6 +73,7 @@ public class Security {
         return null;
     }
 
+    //MD5 Sha-512
     public static String get_SHA_512_SecurePassword(String passwordToHash, String salt){
         String generatedPassword = null;
         try {
@@ -89,6 +91,7 @@ public class Security {
         return generatedPassword;
     }
 
+    //RSA Encryption
     public static KeyPair generateKeyPair() throws Exception {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(2048, new SecureRandom());
@@ -135,6 +138,8 @@ public class Security {
         return new String(decriptCipher.doFinal(bytes), UTF_8);
     }
 
+
+    //Singature
     public static String sign(String plainText, PrivateKey privateKey) throws Exception {
         Signature privateSignature = Signature.getInstance("SHA256withRSA");
         privateSignature.initSign(privateKey);
