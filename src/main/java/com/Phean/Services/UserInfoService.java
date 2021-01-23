@@ -1,19 +1,16 @@
 package com.Phean.Services;
 
 import com.Phean.Dao.UserDao;
-import com.Phean.Models.Student;
 import com.Phean.Models.UserInfo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
-
 import java.util.List;
 
 public class UserInfoService implements UserDao {
     Configuration con = new Configuration().configure().addAnnotatedClass(UserInfo.class);
-
     SessionFactory sf = con.buildSessionFactory();
     Session session = sf.openSession();
     Transaction tran;

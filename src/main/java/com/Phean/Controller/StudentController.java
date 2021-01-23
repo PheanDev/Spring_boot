@@ -1,7 +1,6 @@
 package com.Phean.Controller;
 
 import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.Phean.Dao.studentDao;
 import com.Phean.Models.Student;
 import com.Phean.Services.studentService;
 
@@ -18,7 +15,7 @@ import com.Phean.Services.studentService;
 public class StudentController {
 	studentService st=new studentService();
 	@ResponseStatus(value=HttpStatus.OK)
-	@RequestMapping(value="api/v1/",method=RequestMethod.GET)
+	@RequestMapping(value="api/v1",method=RequestMethod.GET)
 	public List<Student> getStudent() {
 		return st.getList();
 	}
@@ -29,4 +26,6 @@ public class StudentController {
 	{
 		return st.insertStudent(s);
 	}
+
+//	Implement put Delete ....
 }

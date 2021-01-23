@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +44,6 @@ public class studentService implements com.Phean.Dao.studentDao {
          tran.commit();
          return json;
       } catch (Exception ex) {
-
          System.out.print(ex.getMessage());
          return new Student();
       }
