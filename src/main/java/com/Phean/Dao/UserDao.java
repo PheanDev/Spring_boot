@@ -8,4 +8,6 @@ import java.util.List;
 public interface UserDao {
     public List<UserInfo> getListUserInfo();
     public UserInfo getUserInfoByUserName(String username);
+
+    //Add more CRUD here
 }
